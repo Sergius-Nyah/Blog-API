@@ -38,11 +38,17 @@ let lastId = 3;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Write your code here//
-
 //CHALLENGE 1: GET All posts
-
+app.get("/posts", (req, res) => {
+  console.log(posts);
+  res.json(posts); 
+}); 
 //CHALLENGE 2: GET a specific post by id
+app.get("/posts/:id", (req, res) => {
+  const post = posts.find((p) => p.id === parseInt(req.params.id));
+  if (!post) return res.status(404).json({ message: "Post not found" });
+  res.json(post);
+});
 
 //CHALLENGE 3: POST a new post
 

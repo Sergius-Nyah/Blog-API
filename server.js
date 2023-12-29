@@ -1,20 +1,17 @@
 import express from "express";
-import bodyParser from "body-parser"; // Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
-import axios from "axios"; // Make HTTP requests.  
+import bodyParser from "body-parser";
+import axios from "axios";
 
 const app = express();
 const port = 3000;
-const API_URL = "http://localhost:4000"; // URL of the API server
+const API_URL = "http://localhost:4000";
 
-app.use(express.static("public")); // Use Built-in middleware to serve static files 
-// from "public".  
+app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser middleware to parse 
-// incoming request in URL-encoded format. 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use(bodyParser.json()); //Accept and Understand JSON from incoming request. 
-
-// Fetch posts from API and render on index.ejs
+// Route to render the main page
 app.get("/", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/posts`);
@@ -25,12 +22,11 @@ app.get("/", async (req, res) => {
   }
 });
 
-// Render modify.ejs for creating new posts
+// Route to render the edit page
 app.get("/new", (req, res) => {
   res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
 });
 
-//Fetches and Renders specific post with "ID" 
 app.get("/edit/:id", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/posts/${req.params.id}`);
@@ -53,7 +49,7 @@ app.post("/api/posts", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     res.status(500).json({ message: "Error creating post" });
-  } 
+  }
 });
 
 // Partially update a post
@@ -71,7 +67,7 @@ app.post("/api/posts/:id", async (req, res) => {
   }
 });
 
-//Send request to Delete a post with a specific ID. 
+// Delete a post
 app.get("/api/posts/delete/:id", async (req, res) => {
   try {
     await axios.delete(`${API_URL}/posts/${req.params.id}`);

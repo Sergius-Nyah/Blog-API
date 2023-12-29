@@ -1,4 +1,4 @@
-Helps you create a blog website for yoursefl.. 
+Helps you create a blog website for yourself.. 
 
 Clone at https://github.com/Sergius-Nyah/Blog-API
 

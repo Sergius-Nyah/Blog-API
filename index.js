@@ -8,10 +8,10 @@ const port = 4000;
 let posts = [
   {
     id: 1,
-    title: "The Rise of Decentralized Finance",
+    title: "Tech Innovation in the Heart of Africa: A Story of Resilience and Progress",
     content:
-      "Decentralized Finance (DeFi) is an emerging and rapidly evolving field in the blockchain industry. It refers to the shift from traditional, centralized financial systems to peer-to-peer finance enabled by decentralized technologies built on Ethereum and other blockchains. With the promise of reduced dependency on the traditional banking sector, DeFi platforms offer a wide range of services, from lending and borrowing to insurance and trading.",
-    author: "Alex Thompson",
+      "Amidst the vibrant landscapes of Africa, a profound story of technological innovation is unfolding—a story that speaks of resilience, progress, and the indomitable spirit of its people. From the bustling tech hubs of Lagos to the dynamic innovation centers of Nairobi, a wave of creativity and ingenuity is shaping the continent's future. With groundbreaking advancements in fields such as renewable energy, healthcare technology, and agricultural innovation, Africa is charting a new course—one defined by homegrown solutions and a commitment to sustainable progress. As the world turns its gaze toward the continent's remarkable journey, it becomes evident that Africa's tech renaissance is not just a narrative of progress, but a testament to the unwavering spirit of innovation that defines its people.",
+    author: "Sergy White",
     date: "2023-08-01T10:00:00Z",
   },
   {
@@ -90,3 +90,5 @@ app.delete("/posts/:id", (req, res) => {
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
 });
+
+

@@ -14,7 +14,9 @@
     <h1>
       <%= heading %>
     </h1>
-
+<!-- Checks if a post object is available in the local variables. 
+Yes? : User edits post. 
+No? : Alternate form is displayed for user to create post -->
     <% if (locals.post) { %>
       <form id="editForm" method="post" action="/api/posts/<%=post.id%>">
         <input type="text" name="title" value="<%=post.title %>">

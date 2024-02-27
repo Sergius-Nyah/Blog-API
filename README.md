@@ -1,5 +1,5 @@
 ## Blog API
-This project is a Blog API built with Express.js and Node.js. It allows users to perform CRUD (Create, Read, Update, Delete) operations on blog posts. The API provides endpoints to fetch all blog posts, fetch a specific blog post by ID, create a new blog post, update a blog post by ID, and delete a blog post by ID.
+Simple API allowing users to perform CRUD (Create, Read, Update, Delete) operations on blog posts. The API provides endpoints to fetch all blog posts, fetch a specific blog post by ID, create a new blog post, update a blog post by ID, and delete a blog post by ID.
 
 ## Features
 - Fetch all blog posts
